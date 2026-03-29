@@ -418,4 +418,60 @@ input:focus {
 
     /* Forçar quebra de página se necessário */
     tr { page-break-inside: avoid; }
+    
+    .modal { display: none !important; }
 }
+
+/* Extensão para html2pdf (exatamente igual ao print) */
+body.printing-pdf { background: white !important; }
+body.printing-pdf::before { display: none !important; }
+body.printing-pdf .header, body.printing-pdf .card-header, body.printing-pdf #teacherForm, body.printing-pdf #clearDataBtn, body.printing-pdf #printPdfBtn, body.printing-pdf .divider, body.printing-pdf .secondary-btn, body.printing-pdf #dashboardControls { display: none !important; }
+body.printing-pdf .print-only { display: block !important; }
+body.printing-pdf .page-wrapper { padding: 0 !important; max-width: 100% !important; margin: 0 !important; }
+body.printing-pdf .main-content { display: block !important; }
+body.printing-pdf .card { box-shadow: none !important; border: none !important; padding: 0 !important; background: white !important; max-width: 100% !important; }
+body.printing-pdf .dashboard-section { margin-top: 0 !important; }
+body.printing-pdf h2 { font-size: 14pt !important; text-align: left; margin-bottom: 10px; color: black; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+body.printing-pdf .premium-table { font-size: 10pt; border: 1px solid #000; width: 100%; border-collapse: collapse; table-layout: auto; }
+body.printing-pdf .premium-table th, body.printing-pdf .premium-table td { border: 1px solid #333; padding: 6px 8px; color: black !important; }
+body.printing-pdf .premium-table th { background-color: #f0f0f0 !important; color: black !important; font-weight: bold; }
+body.printing-pdf .status-badge { border: none !important; color: black !important; background: transparent !important; padding: 0 !important; font-weight: normal !important; }
+body.printing-pdf .modal { display: none !important; }
+
+/* Past Activities List */
+.activities-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.activity-card {
+    background: #f8fafc;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.activity-card:hover {
+    border-color: var(--primary);
+    background: #f1f5f9;
+}
+
+.activity-card h4 {
+    margin-bottom: 0.25rem;
+    color: var(--primary);
+    font-size: 1.05rem;
+}
+
+.activity-card p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
